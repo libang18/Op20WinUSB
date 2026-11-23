@@ -1,0 +1,6 @@
+# Build outputs (build.cmd, build-installer.cmd).
+out/
+*.obj
+
+# The installer is a build product; it is published as a release asset.
+/Op20WinUSB-Setup.msi

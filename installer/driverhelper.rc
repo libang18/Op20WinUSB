@@ -1,0 +1,28 @@
+// Version information of op20winusb-driver-setup.exe.
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Op20WinUSB"
+            VALUE "FileDescription", "Op20WinUSB driver package setup helper"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "op20winusb-driver-setup"
+            VALUE "OriginalFilename", "op20winusb-driver-setup.exe"
+            VALUE "ProductName", "Op20WinUSB"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

@@ -1,0 +1,42 @@
+; op20winusb.inf
+;
+; Binds the Windows inbox WinUSB driver (winusb.sys) to the Tactrix Openport 2.0
+; (USB VID 0403 / PID CC4D) for use with the Op20WinUSB J2534 DLL.
+; No kernel driver of its own: nothing here is loaded into the kernel except
+; Microsoft's winusb.sys.
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = USBDevice
+ClassGUID   = {88BAE032-5A81-49f0-BC3D-A4FF138216D6}
+Provider    = %Provider%
+DriverVer   = 11/22/2026,1.0.0.0
+CatalogFile = op20winusb.cat
+PnpLockdown = 1
+
+[Manufacturer]
+%Provider% = Devices, NTamd64, NTx86
+
+[Devices.NTamd64]
+%CC4D.Name% = WinUSB_Install, USB\VID_0403&PID_CC4D
+
+[Devices.NTx86]
+%CC4D.Name% = WinUSB_Install, USB\VID_0403&PID_CC4D
+
+[WinUSB_Install.NT]
+Include = winusb.inf
+Needs   = WINUSB.NT
+
+[WinUSB_Install.NT.Services]
+Include = winusb.inf
+Needs   = WINUSB.NT.Services
+
+[WinUSB_Install.NT.HW]
+AddReg = WinUSB_HW_AddReg
+
+[WinUSB_HW_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{F532A38C-F58A-4095-B94E-51F59173EFB2}"
+
+[Strings]
+Provider  = "Op20WinUSB"
+CC4D.Name = "Op20WinUSB: Tactrix Openport 2.0 J2534 [WinUSB]"
