@@ -59,3 +59,7 @@ You need Visual Studio with the C++ workload and the Windows SDK. Run `build.cmd
   `optest` tool and the debug log
 - [PROTOCOL.md](PROTOCOL.md) – the cable's wire protocol
 - [COMPARISON.md](COMPARISON.md) – comparison with OPTA
+
+## Licence
+
+MIT, see [LICENSE](LICENSE). Any program may load and ship the driver.
